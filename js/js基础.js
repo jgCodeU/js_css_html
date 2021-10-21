@@ -71,27 +71,27 @@
 
 // ==============================
 
-// 手写防抖(函数触发后计时一段时间后再执行，若计时期间重复触发，则重新计时)
-// const fun = imDebounce(fn, delay)
-function imDebounce(fn, delay) {
-    console.log('执行imDebouncd')
-    function fun() {
-        console.log('执行fun')
-        clearTimeout(fn.timeId)
-        fn.timeId = setTimeout(() =>{
-            fn()
-        }, delay)
-    }
-    return fun
-}
+// // 手写防抖(函数触发后计时一段时间后再执行，若计时期间重复触发，则重新计时)
+// // const fun = imDebounce(fn, delay)
+// function imDebounce(fn, delay) {
+//     console.log('执行imDebouncd')
+//     function fun() {
+//         console.log('执行fun')
+//         clearTimeout(fn.timeId)
+//         fn.timeId = setTimeout(() =>{
+//             fn()
+//         }, delay)
+//     }
+//     return fun
+// }
 
-function foo() {
-    console.log('防抖foo')
-}
-const DebouncedFn = imDebounce(foo, 1500)
-setInterval(() => {
-    DebouncedFn()
-}, 500);
+// function foo() {
+//     console.log('防抖foo')
+// }
+// const DebouncedFn = imDebounce(foo, 1500)
+// setInterval(() => {
+//     DebouncedFn()
+// }, 500);
 
 
 
@@ -101,3 +101,32 @@ setInterval(() => {
 
 
 //手写节流（一个时间段内，同一函数重复触发多次，只在计时结束时执行最后一次的触发）
+
+
+
+
+
+//实现组合函数
+// // （1）简单实现
+// function add(m) { 
+//     return m+10
+// }
+
+// function double(n) {
+//  return n*2
+// }
+
+// function compose(fn1, fn2) {
+//     return function(m){
+//         fn2(fn1(m))
+//     }
+// }
+// （2）通用组合函数实现
+
+
+
+
+
+
+
+
