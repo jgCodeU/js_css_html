@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box_1 {
+            /* width: 100%; */
+            height: 50px;
+            margin: 100px;
+            padding: 100px;
+            border: 20px double; 
+            background-color: pink;
+        }
+
+        .box_2 {
+            width: 200px;
+            height: 50px;
+
+            margin: 20px;
+            padding: 20px;
+            border: 20px dotted skyblue;
+
+            background-color: pink;
+        }
+
+        .box_3 {
+            width: 100%;
+            height: 200px;
+            
+            background-color: skyblue;
+        }
+        .box_3_1 {
+            /* padding: 100%; */
+            padding: 10% 50%;
+            background-color: pink;
+        }
+
+        .box_4 {
+            box-sizing: border-box;
+            width: 200PX;
+            height: 200px;
+            
+            background-color: skyblue;
+        }
+        .box_4_1 {
+            box-sizing: border-box;
+            height: 100px;
+            margin: 0 -100px;
+
+            /* background-color: pink; */
+            background-color: inherit;
+        }
+
+        .box_5 {
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+
+            background-color: pink;
+        }
+
+        .box_6 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        .box_6_1 {
+            height: 50px;
+            background-color: pink;
+        }
+
+        .box_7 {
+            display: inline;
+            /* width: 200px;
+            height: 200px; */
+            background-color: pink;
+
+            margin: 20px;
+            padding: 200px 0 200px 0;
+        }
+        .box_7_1 {
+            display: inline;
+            /* width: 200px;
+            height: 200px; */
+            background-color: skyblue;
+
+            margin: 20px;
+            padding: 200px 0 200px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box_1">哈哈哈</div> -->
+
+    <!-- <div class="box_2">conten-box</div> -->
+
+    <!-- padding对盒子尺寸的影响 -->
+    <!-- <div class="box_3">
+        <div class="box_3_1"></div>
+    </div> -->
+
+
+    <!-- margin的负值 -->
+    <!-- <div class="box_4">
+        <div class="box_4_1"></div>
+    </div> -->
+
+    <!-- 盒子尺寸计算 -->
+    <!-- 标准盒模型：盒子实际尺寸 = content(设置的尺寸) + padding + border  -->
+    <!-- <div class="box_5"></div> -->
+
+    <!-- 块级盒子自动继承父级元素的宽度 -->
+    <!-- <div class="box_6">
+        <div class="box_6_1"></div>
+    </div>    -->
+
+    <!-- inline盒子设置竖直方向上的padding和margin不生效吗？ -->
+    <div class="box_7">inline（内联div）盒子</div>
+    <span class="box_7_1">inline（内联span）盒子</span>
+
+
+    <script>
+        // const box_4_1 = document.getElementsByClassName('box_4_1')
+        // console.log(box_4_1, box_4_1[0].clientWidth)
+
+        // const box_4 = document.getElementsByClassName('box_4')
+        // console.log(box_4, box_4[0].clientWidth)
+
+        // const divEl = document.getElementsByTagName('div')
+        // console.log(divEl, divEl[0])
+
+        const box_5 = document.getElementsByClassName('box_5')
+        console.log(box_5)
+    </script>
+</body>
+</html>

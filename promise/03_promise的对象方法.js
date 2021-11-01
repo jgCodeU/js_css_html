@@ -56,7 +56,7 @@ new Promise((resolve, reject) => {
 
 //总结：无论resolve什么值，或是then中的回调函数返回值是什么，
 // then()都会新建一个promise对象，
-// 并将then中回调函数的返回值作为新promise中resolve的参数
+// 并将then中回调函数的返回值作为新promise中resolve的参数.
 
 
 
