@@ -6,7 +6,7 @@
 
 
 
-//（2）给resolve函数传入一个promise
+//（2）给resolve函数传入一个promise：当前promise的状态由传入的promise状态决定，而且，传递的值也由传入的promise来决定
 // const p1 = new Promise((resolve, reject) => {
 //     resolve('p1-resolve')
 // })
