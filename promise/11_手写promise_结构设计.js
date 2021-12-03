@@ -28,3 +28,6 @@ const promise = new MyPromise((MyResolve, MyReject) => {
     MyResolve()
     MyReject()
 })
+
+//本节目标：
+//在构建promise对象的时候，立即执行传入的函数
