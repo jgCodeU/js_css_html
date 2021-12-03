@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 以下为文档结构选择器 */
+
+/* 后代选择器 element1 element2 */
+/* div中的所有h1标签都会被选中 */
+/* div h1 {
+    color: pink;
+}
+
+div p {
+    color: skyblue;
+} */
+
+
+/* 子选择器 element1 > element2 */
+/* 父元素为 element1 的所有 element2 都会被选中 */
+/* div>h1 {
+    color: pink;
+}
+
+div>p {
+    color: skyblue;
+}
+
+h1>p {
+    color: red;
+} */
+
+/* 相邻兄弟选择器 element1 + element2 */
+ /* 选择紧挨在 element1 之后的 element2 元素 */
+/* h1 + h1 {
+    color: skyblue;
+}
+
+h1 + p {
+    background-color: skyblue;
+} */
+
+/* 一般兄弟选择器 element1 ~ element2 */
+/* 选择与 element1 同级的且在其之后的每个 element2元素 */
+/* h1 ~ p {
+    background-color: skyblue;
+}  */
+
+
+
+/* 以下为伪类选择器 */
+/* 为元素的不同状态设置不同的样式 */
+
+/* 文档跟元素伪类 :root */
+/* :root {
+    background-color: skyblue;
+} */
+
+
+
+/* 以下为伪元素选择器 */
+/* 伪元素选择器用于设置元素指定部分的样式 */
+
+/* ::first-line 向文本的首行添加样式 */
+/* div>p::first-line {
+    color: skyblue;
+} */
+
+/* ::first-letter 给文本的首字母添加样式 */
+/* div>p::first-letter {
+    color: skyblue;
+    background-color: pink;
+} */
+
+/* element::before 在每个element元素之前加入内容 */
+/* element::after 在每个element元素之后加入内容 */
+
+/* ::selection 选择被用户选取的部分 */
+div>p::selection {
+    background-color: pink;
+}
+
+
+
+
+
+
+
+
+
+
+
+

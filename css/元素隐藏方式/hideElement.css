@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 常见3种 */
+/* 1.display:none：页面不显示、不占位，dom树中存在，触发重排重绘，无法触发点击事件 */
+/* 2.visibility:hidden:页面不显示、占位，不触发重排，触发重绘，无法触发点击事件,子元素设置visibility:visibles时，子元素可显示出来 */
+/* 3.opacity: 0:视觉上看不见，但是仍然存在页面上，可触发点击事件 */
+/* 拓展：渲染流程--重排重绘 */
+
+/* 不常见： */
+/* position: absolute：通过使用绝对定位将元素移除可视区域内，以此来实现元素的隐藏。 */
+/* z-index: 负值：来使其他元素遮盖住该元素，以此来实现隐藏。 */
+/* clip/clip-path ：使用元素裁剪的方法来实现元素的隐藏，这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。 */
+/* transform: scale(0,0)：将元素缩放为 0，来实现元素的隐藏。这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。 */
+/* 将元素的margin，border，padding，height和width等影响元素盒模型的属性设置成0，如果元素内有子元素或内容，还应该设置其overflow:hidden来隐藏其子元素。无法触发点击事件 */
+
+.h1-1 {
+    width: 500px;
+    height: 100px;
+    background-color: pink;
+}
+
+.h1-2 {
+    width: 500px;
+    height: 100px;
+    background-color: skyblue;
+    /* display: none; */
+    visibility: hidden;
+    /* opacity: 0; */
+}
+
+.h1-2 p {
+    visibility: visible;
+}
+
+.h1-3 {
+    width: 500px;
+    height: 100px;
+    background-color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
