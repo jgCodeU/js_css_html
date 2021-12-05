@@ -1,0 +1,39 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 1.兄弟之间重叠 */
+.div-1 {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    margin-bottom:-20px ;
+}
+.div-2 {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    opacity: 0.3;
+    margin-top: -40px;
+}
+
+/* 2.父子之间重叠 */
+.div-p {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    margin-top: 30px;
+}
+.div-c {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    opacity: 0.3;
+    margin-top: 20px;
+}
+
+
+
+
