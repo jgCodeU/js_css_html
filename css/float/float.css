@@ -1,0 +1,16 @@
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    border: pink solid 10px;
+  }
+  
+  p {
+    line-height: 2;
+    word-spacing: 0.1rem;
+  }
+
+  img {
+      float: left;
+      margin-right: 20px;
+  }
