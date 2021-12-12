@@ -5,8 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .pBox {
+            background-color: pink;
+
+            /* overflow */
+            /* height: 50px; */
+            /* overflow: hidden; */
+            /* overflow: scroll; */
+            /* overflow: auto; */
+
+            /* 定位：绝对/固定 */
+            /* width: 100%; */
+            /* position: absolute; */
+            /* position: fixed; */
+
+            /* 浮动 */
+            /* width: 100%;
+            float: left; */
+
+            /* display：inline-block/flex */
+            /* width: 100%; */
+            /* display: inline-block; */
+            display: flex;
+            
+        }
+        .cBox {
+            width: 200px;
+            height: 400px;
+            background-color: skyblue;
+            float: left;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- 利用overflow:hidden/auto/scroll 触发BFC -->
+    <div class="pBox">
+        <div class="cBox"></div>
+    </div>
     
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 核心：当内容的宽高为0时，border的宽度直接设定，长度由相邻位置的border决定
+                可认为border是“梯形”
+        */
+        .box {
+            width: 60px;
+            height: 60px;
+            border-top: 30px solid red;
+            border-bottom: 30px solid yellow;
+            border-left: 30px solid blue;
+            border-right: 30px solid black;
+
+        }
+        .box1 {
+            display: inline-block;
+
+            border-top: 30px solid red;
+            border-bottom: 30px solid yellow;
+            border-left: 30px solid blue;
+            border-right: 30px solid black;
+            border-radius: 30px;
+
+        }
+        .box2 {
+            display: inline-block;
+
+            border-top: 30px solid red;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
