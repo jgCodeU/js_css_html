@@ -7,7 +7,7 @@
 // }).catch(err => {
 //     console.log(err)
 // }).finally((res) => {
-//     console.log('finally')
+//     console.log('finally',res)
 // })
 
 // const promise1 = new Promise((resolve, reject) => {
@@ -15,14 +15,14 @@
 // }).then(res => {
 //     console.log(res)
 // }).finally((res) => {
-//     console.log('finally')
+//     console.log('finally', res)
 // })
 
 
 const promise1 = new Promise((resolve, reject) => {
     resolve(123)
 }).finally((res) => {
-    console.log('finally')
+    console.log('finally', res)
 })
 
 
