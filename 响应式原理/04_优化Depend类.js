@@ -1,3 +1,8 @@
+//优化点：
+//1.依赖函数使用set数据结构来保存（防止同一个属性重复添加依赖函数）
+//2.reactiveFunction不在新建proxyObj的get中添加，在Depend中添加
+
+
 //监听对象的变化（利用proxy对象）==============
 const obj1 = {
     name: 'zhangsan',
