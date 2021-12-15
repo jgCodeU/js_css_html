@@ -1,6 +1,7 @@
 const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve('p1')
+        // resolve('p1')
+        reject('p1')
     }, 1000);
 })
 const p2 = new Promise((resolve, reject) => {
@@ -8,14 +9,17 @@ const p2 = new Promise((resolve, reject) => {
     // resolve('p2')
 })
 const p3 = new Promise((resolve, reject) => {
-    resolve('p3')
+    // resolve('p3')
+    reject('p3')
 })
+
+const p4 = 123
 
 // 等所有的promise都变化之后，再将所有结果放入一个数组
 //但是，保存结果的数组中存放的元素是对象，会标志对应的promise是fulfilled还是rejected
 
-Promise.allSettled([p1, p2,p3]).then(res => {
-    console.log(res)
+Promise.allSettled([p1, p2, p3, p4]).then(res => {
+    console.log('res',res)
 }).catch(err => {
-    console.log(err)
+    console.log('err',err)
 })

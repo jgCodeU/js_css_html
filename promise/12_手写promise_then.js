@@ -41,5 +41,5 @@ const promise = new MyPromise((MyResolve, MyReject) => {
     // MyReject()
 })
 promise.then((res) => {
-    console.log(res)
+    console.log('res',res)
 })
