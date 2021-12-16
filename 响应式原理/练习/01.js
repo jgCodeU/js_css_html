@@ -10,12 +10,14 @@ class Depend {
         this.reactiveFn = new Set()
     }
     addReactiveFN() {
-        console.log('addReactiveFN', reactiveFunction)
-        this.reactiveFn.add(reactiveFunction)
+        // console.log('addReactiveFN', reactiveFunction)
+        if(reactiveFunction) {
+            this.reactiveFn.add(reactiveFunction)
+        }
     }
     executeReactiveFn() {
         this.reactiveFn.forEach((fn) => {
-            console.log('executeReactiveFn',fn)
+            // console.log('executeReactiveFn',fn)
             fn()
         })
     }
@@ -24,7 +26,7 @@ class Depend {
 //创建代理对象
 const proxyObj = new Proxy(target, {
     get:function(target, key, reciever) {
-        console.log('proxyObjGet')
+        // console.log('proxyObj-Get')
         // 构建依赖树
         const depend = setAndGetDepend(target, key)
         // 添加依赖
@@ -51,7 +53,7 @@ function setAndGetDepend(target, key, set) {
         depend = new Depend()
         dependMap.set(key, depend)
     }
-    console.log('targetMap',set,targetMap)
+    // console.log('setAndGetDepend',set,targetMap)
     return depend
 }
 
@@ -63,17 +65,36 @@ function collectFn(fn) {
 }
 
 function fn1() {
-    console.log('fn1---响应',proxyObj.age)
+    // console.log('fn1---响应',proxyObj.age)
+    console.log('fn1---响应')
+    proxyObj.age
 }
 function fn2() {
-    console.log('fn2---响应',proxyObj.name)
+    // console.log('fn2---响应',proxyObj.name)
+    console.log('fn2---响应')
+    proxyObj.name
 }
 collectFn(fn1)
 collectFn(fn2)
 
-console.log('ceshi--1')
-console.log('ceshi--2',proxyObj.name = 'lisi',proxyObj.name)
-// proxyObj.name = 'lisi'
+// console.log('ceshi--1--targetMap', targetMap)
+console.log('-----------------------')
+// target.name = 'haha'
+proxyObj.name = 'lisi111'
+console.log(target.name)
+proxyObj.name = 'lisi222'
+console.log(target.name)
+proxyObj.name = 'lisi333'
+console.log(target.name)
+console.log('分割分割分割分割分割分割分割分割')
+proxyObj.age = '12'
+console.log(target.age)
+proxyObj.age = '13'
+console.log(target.age)
+proxyObj.age = '14'
+console.log(target.age)
+
+//注意：null也会被添加进依赖函数列表，当取出执行的时候会报错！！！添加时需要进行判断是否是函数！！！ 
 
 
 

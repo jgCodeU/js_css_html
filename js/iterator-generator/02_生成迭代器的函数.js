@@ -27,3 +27,21 @@ console.log(numsIter.next())
 console.log(numsIter.next())
 console.log(numsIter.next())
 console.log(numsIter.next())
+
+// 创建一个无限的迭代器
+function createInfinityIterator() {
+  let index = 0
+  return {
+    next: function () {
+      return { done: false, value: index++ }
+    }
+  }
+}
+
+const infinityIterator = createInfinityIterator()
+console.log(infinityIterator.next())
+console.log(infinityIterator.next())
+console.log(infinityIterator.next())
+console.log(infinityIterator.next())
+console.log(infinityIterator.next())
+
