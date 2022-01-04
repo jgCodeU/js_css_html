@@ -10,7 +10,7 @@
 
 
 //情况三：X不是路径，也不是核心模块
-// require('person')
+// require('part')
 // console.log(module.paths)
 const axios = require("axios")
 console.log(axios)
