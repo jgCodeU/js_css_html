@@ -24,11 +24,12 @@ const obj = {
   obj.friends.name = "james"
   console.log(info2.friends.name)
   
-  // 3.stringify和parse来实现
+  // 3.stringify和parse来实现(注意，不能拷贝对象中的函数，函数会被默认丢弃 )
   const jsonString = JSON.stringify(obj)
   console.log(jsonString)
   const info3 = JSON.parse(jsonString)
   obj.friends.name = "curry"
   console.log(info3.friends.name)
   console.log(info3)
+
   

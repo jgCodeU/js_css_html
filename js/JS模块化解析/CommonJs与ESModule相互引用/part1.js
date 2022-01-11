@@ -5,7 +5,7 @@ const sayName1 = function() {
     console.log(name)
 }
 
-// 使用CommanJs导出
+// 使用CommonJs导出
 module.exports = {
     name,
     sayName1
