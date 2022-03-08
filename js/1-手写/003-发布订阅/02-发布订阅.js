@@ -34,5 +34,5 @@ shoeObj.listen('red',function(size){
 shoeObj.listen('block',function(size){
     console.log("再次打印尺码是："+size); 
 });
-shoeObj.trigger("red",40);
+shoeObj.trigger("black",40);
 shoeObj.trigger("block",42);
