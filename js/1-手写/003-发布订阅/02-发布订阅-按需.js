@@ -36,12 +36,15 @@ publisher.publish = function() {
 publisher.addListen('red', function(param1, param2) {
     console.log(111, param1, param2)
 })
+publisher.addListen('red', function(param1, param2, param3) {
+    console.log('red-111', param2, param3)
+})
 publisher.addListen('black', function(param1, param2) {
     console.log(222, param1, param2)
 })
 
 // 发布
-publisher.publish('red', 'red-1', 'red-2')
+publisher.publish('red', 'red-2', 'red-3')
 publisher.publish('black', 'black-1', 'black-2')
 
 
