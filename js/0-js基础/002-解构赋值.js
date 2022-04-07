@@ -7,10 +7,10 @@
 // let { name, age } = person
 // console.log('name:', name,',', 'age:', age)
 
-// 2.无声明赋值
+// 2.无声明赋值，即不加var、let、const等声明符
 // let person = { name:'zhangsan', age:21 };
 // ({ name, age } = { name:'zhangsan', age:21 }) // 无声明赋值时，需要用括号括起来；（...）表达式前要有分号，否则会被当成上一行中的函数来执行
-// // ({ name, age } = person) // 无声明赋值时，赋值号右侧不能使用（...）外面定义的对象（可能是作用域问题？？？）
+// // ({ name, age } = person) // 无声明赋值时，赋值号右侧不能使用外面定义的对象（可能是作用域问题？？？）
 // console.log('name:', name,',', 'age:', age)
 
 // 3.给新的变量名赋值：将对象中的属性值提取出来，赋值给与对象属性不同名属性
