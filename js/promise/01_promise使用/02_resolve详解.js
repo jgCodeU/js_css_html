@@ -2,7 +2,7 @@
 //给resolve传入不同的值
 //（1）普通的值或者对象：当前promise的状态变为fullfiled
 //（2）传入一个promise ：当前promise的状态由传入的promise状态决定，而且，传递的值也由传入的promise来决定
-//（3）传入一个对象，并且这个对象实现了then方法，那么这个then方法会被执行，且该then方法决定当前primise的状态及传出的值
+//（3）传入一个对象，并且这个对象实现了then方法，那么这个then方法会被执行，且该then方法决定当前promise的状态及传出的值
 
 
 
@@ -20,7 +20,7 @@
 //     console.log("err", err)
 // })
 
-// (3)传入一个对象，并且这个对象实现了then方法，那么这个then方法会被执行，且该then方法决定当前primise的状态及传出的值
+// (3)传入一个对象，并且这个对象实现了then方法，那么这个then方法会被执行，且该then方法决定当前promise的状态及传出的值
 const obj = {
     name:'zhangsan',
     then: function() {
