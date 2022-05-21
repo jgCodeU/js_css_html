@@ -1,14 +1,14 @@
-// ...展开运算符：将一个数组转为用逗号分隔的参数序列
+// 数组展开运算符：可以将一个数组转为用逗号分隔的参数序列，且每次只能展开一层数组。
 // let a = [1,2,4]
 // console.log(...a)
 
-function fn(...args) {
-    console.log(args)
-}
-function foo(args) {
-    console.log(args)
-    console.log(...args)
-}
+// function fn(...args) {
+//     console.log(args)
+// }
+// function foo(args) {
+//     console.log(args)
+//     console.log(...args)
+// }
 // fn(1,2,3)
 // fn([1,2,3])
 // fn('123')
@@ -23,6 +23,9 @@ function foo(args) {
 //     3:'3-3'
 // })
 
+
+
+// 对象展开运算符：取出参数对象中的所有可遍历属性，拷贝到当前对象之中。
 // let a = {a:1}
 // let b = {...a}
 // console.log(b)
@@ -38,5 +41,9 @@ function foo(args) {
 // }
 // let b = {...a}
 // console.log('b', b)
+
+
+
+
 
 

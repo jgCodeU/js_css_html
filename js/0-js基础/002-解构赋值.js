@@ -41,11 +41,31 @@
 // console.log('name:', name)
 
 // 8.解构时会查找原型链（如果对象自身不包含对应属性，将从原型链中查找）
-let person = { 'name':'zhangsan' }
-Object.prototype.age = 21 //在person对象的原型链中添加age属性
-let { name, age } = person
-console.log('name', name, ',', 'age', age)
+// let person = { 'name':'zhangsan' }
+// Object.prototype.age = 21 //在person对象的原型链中添加age属性
+// let { name, age } = person
+// console.log('name', name, ',', 'age', age)
 
+
+
+
+
+// 数组解构赋值
+// 1.声明并赋值
+// let [a, b, c] = [1,2,3]
+// console.log('abc', a, b, c)
+
+// 2.设置默认值
+// let [a, b, c, d = 4] = [1,2,3]
+// console.log('abcd', a, b, c, d)
+
+// 3.忽略某些值
+// let [a, b,, c] = [1, 2, 3, 4]
+// console.log('abc', a, b, c)
+
+// 4.将剩余数组赋值给一个变量
+// let [a ,b, ...arg] = [1,2,3,4,5,6]
+// console.log('arg',a,b,arg)
 
 
 
