@@ -32,9 +32,11 @@ const obj = {
 new Promise((resolve, reject) => {
     resolve(obj)
 }).then((res) => {
-    console.log(res)
+    console.log('promise-resolve', res)
 }, (err) => {
-    console.log(err)
+    console.log('promise-reject', err)
+}).finally(() => {
+    console.log('promise-finally')
 })
 
 

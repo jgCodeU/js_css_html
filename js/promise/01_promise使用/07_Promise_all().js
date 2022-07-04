@@ -5,8 +5,8 @@ const p1 = new Promise((resolve, reject) => {
     }, 1000);
 })
 const p2 = new Promise((resolve, reject) => {
-    // resolve('p2')
-    reject('p2')
+    resolve('p2')
+    // reject('p2')
     
 })
 const p3 = new Promise((resolve, reject) => {

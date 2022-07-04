@@ -37,18 +37,23 @@ class MyPromise {
         }
     }
     then(onFulfilled, onRejected){
-        if(this.status === PROMISE_STATUS_FULFILLED) {
-            onFulfilled(this.value)
-        } else if(this.status === PROMISE_STATUS_REJECTED) {
-            onRejected(this.reason)
-        } else {
-            if(onFulfilled) {
-                this.onFulfilledCallbackFns.push(onFulfilled)
-            } 
-            if(onRejected) {
-                this.onRejectedCallbackFns.push(onRejected)
+        const newPromise = new MyPromise((resolve, reject) => {
+            console.log("newPromise", this)
+            if(this.status === PROMISE_STATUS_FULFILLED) {
+                onFulfilled(this.value)
+            } else if(this.status === PROMISE_STATUS_REJECTED) {
+                onRejected(this.reason)
+            } else {
+                if(onFulfilled) {
+                    this.onFulfilledCallbackFns.push(onFulfilled)
+                } 
+                if(onRejected) {
+                    this.onRejectedCallbackFns.push(onRejected)
+                }
             }
-        }
+        })
+        return newPromise
+        
     }
 }
 
@@ -68,6 +73,9 @@ promise.then((res) => {
 promise.then((res) => {
     console.log("promise-then-3", res)
 })
+
+// 实现链式调用的思路：
+// 1.then()返回一个新的promise
 
 
 

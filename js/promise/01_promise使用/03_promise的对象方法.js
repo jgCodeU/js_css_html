@@ -21,8 +21,8 @@
 // new Promise((resolve, reject) => {
 //     resolve()
 // }).then((res) => {
-//     return {name: 'zhangsan'}
-//     // return '哈哈哈哈哈哈'
+//     // return {name: 'zhangsan'}
+//     return '哈哈哈哈哈哈'
 // }).then(res => {
 //     console.log('2--then',res)
 // })
@@ -30,6 +30,7 @@
 //（2）返回一个promise，则将这个新的promise作为then中返回的promise的rosolve的值
 // new Promise((resolve, reject) => {
 //     resolve('222')
+//     // reject('333')
 // }).then((res) => {
 //     console.log(res)
 //     return new Promise((resolve, reject) => {
@@ -37,7 +38,7 @@
 //         reject('返回一个promise')
 //     })
 // }).then(res => {
-//     console.log(res)
+//     console.log('resolve', res)
 // }).catch((err) => {
 //     console.log('catch',err)
 // })

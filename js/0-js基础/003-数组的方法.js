@@ -70,7 +70,7 @@
 // console.log(array.lastIndexOf(2, 3)); // 3
 // console.log(array.lastIndexOf(2, 2)); // 0
 // console.log(array.lastIndexOf(2, -2)); // 0
-// console.log(array.lastIndexOf(2, -1)); // 0
+// console.log(array.lastIndexOf(2, -1)); // 3
 
 
 // 8.includes：判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false
@@ -105,7 +105,7 @@
 // })
 // console.log('arr', arr)
 // 注意：
-// (1).除了抛出异常以外，没有办法中止或跳出 forEach() 循环。如果你需要中止或跳出循环，forEach() 方法不是应当使用的工具。
+// (1). 除了抛出异常以外，没有办法中止或跳出 forEach() 循环。如果你需要中止或跳出循环，forEach() 方法不是应当使用的工具。
 // (2). 对于空数组是不会执行回调函数的
 // (3). 对于已在迭代过程中删除的元素，或者空元素会跳过回调函数
 // (4). 遍历次数再第一次循环前就会确定，再添加到数组中的元素不会被遍历。
@@ -246,12 +246,12 @@
 // 12.entries:返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对。
 // MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/entries
 // 用法：arr.entries()
-const array1 = ['a', 'b', 'c'];
-const iterator1 = array1.entries();
-console.log(iterator1);
-// expected output: Array [0, "a"]
-console.log(iterator1.next().value);
-// expected output: Array [1, "b"]
+// const array1 = ['a', 'b', 'c'];
+// const iterator1 = array1.entries();
+// console.log(iterator1);
+// // expected output: Array [0, "a"]
+// console.log(iterator1.next().value);
+// // expected output: Array [1, "b"]
 
 
 
