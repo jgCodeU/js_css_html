@@ -1,5 +1,14 @@
 // 1.原型链继承
 // 子类原型指向父类实例
+// 伪代码：
+function P() {
+    // ...
+}
+function C() {
+    // ...
+}
+C.prototype = new P() 
+// 例子：
 function P() {
     // ...
     this.likes = [1, 2, 3]
@@ -9,7 +18,7 @@ function C() {
     // ...
     this.nameC = 'child'
 }
-C.prototype = new P()
+C.prototype = new P() 
 C.prototype.constructor = C
 const obj = new C()
 obj.nameP = 'pp'
@@ -25,6 +34,7 @@ console.log('obj', obj)
 
 // 2.构造继承
 // 利用父类为子类添加属性
+// 伪代码：
 function P(...arg) {
     // ...
 }
@@ -32,10 +42,30 @@ function C() {
     P.call(this, ...arg)
     // ...
 }
-// 
+// 例子：
+function P(...arg) {
+    let [name, age] = arg 
+    this.name = name
+    this.age = age
+}
+P.prototype.color = ['red', 'blue'] // 修改显式原型添加color
+P.__proto__.num = [1, 2, 3] //给隐式原型添加num属性
+function C(...arg) {
+    P.call(this, ...arg)
+}
+const obj = new C('zhangsan', 21)
+console.log(obj)
+console.log(obj.color) // undefined,无法继承父类原型上的属性。
+console.log(P.color) // undefine,当读取函数对象的属性是，查找的原型是隐式原型
+console.log(P.num) // [1, 2, 3]
+// 优点：父类中的引用对象在子类中都是独立的，不被共享
 // 缺点：
+// （1）无法继承父类原型上的属性。
+// （2）实父类的原型没有在实例的原型链上。
+// （3）父类中相同的属性会被复制到每一个子类实例中。
 
 // 3.组合继承
+// 伪代码：
 function P(...arg) {
     // ...
 }
@@ -43,20 +73,43 @@ function C() {
     P.call(this, ...arg)
 }
 C.prototype === new P()
+// 例子：
+// ...
+// 优点：
+// （1）父类中的函数属性不被子类实例共享
+// （2）子类实例可以共享父类原型中的属性
+// 缺点：
+// （1）子类实例上的属性会隐藏父类上的同名属性，父类中的属性会创建两份，内存浪费
+// （2）父类构造函数调用两遍（ new P(),P.call() ）
 
 // 4.寄生组合继承
-Object.create(protoObj)
+// 伪代码：
+function P(...arg) {
+    // ...
+}
+function C(...arg) {
+    P.call(this, ...arg)
+    // ...
+}
+C.prototype = Object.create(P.prototype)
+// 优点：
+// （1）只调用一次父类构造函数
+// （2）子类实例可使用父类原型链上的属性和方法
 
 // 5.原型式继承
+// ES5之前：
 function createObj(proto) {
     function F() {}
     F.prototype = proto
     proto.constructor = F
     return new F()
 }
+// ES5之后: 
+Object.create()
+
 
 // 6.寄生式继承
-// 封装寄生式继承，来增强对象
+// 封装原型式继承，来增强对象
 function createObj(proto) {
     // 寄生组合继承
     const obj = Object.create(proto)
@@ -69,3 +122,4 @@ function createObj(proto) {
 
 // 7.多继承
 Object.assign()
+// 将多个对象的属性拷贝（浅拷贝）到目标对象中，后面的属性会覆盖前面的同名属性
