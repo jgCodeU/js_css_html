@@ -123,3 +123,32 @@ function createObj(proto) {
 // 7.多继承
 Object.assign()
 // 将多个对象的属性拷贝（浅拷贝）到目标对象中，后面的属性会覆盖前面的同名属性
+
+
+// 补充：
+// instanceof和isPrototypeOf
+// instanceof：检测构造函数Fun的prototype属性是否出现在对象obj的原型链上
+// 语法：obj instanceof Fun
+// 例子：
+const obj = [1, 2 , 3]
+obj instanceof Array // true
+obj instanceof Object // true
+
+// Object.prototype.isPrototypeOf：对象obj1是否出现在对象obj2的原型链上
+// 语法：obj1.prototype.isPrototypeOf(obj2)
+// 例子：
+const obj1 = [1, 2, 3]
+Array.prototype.isPrototypeOf(obj1) // true
+Object.prototype.isPrototypeOf(obj1) // true
+
+// Object.getPrototypeOf():返回给定对象的原型。如果没有继承属性，则返回 null 。
+// 例子：
+let arr = [1, 2, 3]
+Object.getPrototypeOf(Array) === Object.getPrototypeOf(arr) // false
+Object.getPrototypeOf(Array) === Function.prototype // true
+Array.prototype === Object.getPrototypeOf(arr) // true
+
+
+
+
+
