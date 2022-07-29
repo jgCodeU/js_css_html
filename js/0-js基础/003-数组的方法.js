@@ -48,16 +48,22 @@
 // array1[1] = '111'
 // console.log('改变后', array1, array3)
 
+// const arr4 = [1,2,3]
+// const arr5 = 9.concat(arr4)
+// console.log(arr5)
+
 
 // 6.indexof：返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1
 // MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 // 用法：arr.indexof(searchEle, fromIndex)  searchEle：需要查找的元素； formIndex（可选）：起始索引，默认0
+// 起始索引处的元素包含在内，若`fromIndex`为负值（`-n`），代表从倒数第`n`个元素开始向后查找。判断相等使用的是`===`
 // var array = [2, 5, 9];
 // console.log(array.indexOf(2));     // 0
 // console.log(array.indexOf(7));     // -1
 // console.log(array.indexOf(9, 2));  // 2
 // console.log(array.indexOf(2, -1)); // -1
 // console.log(array.indexOf(2, -3)); // 0
+// console.log(array.indexOf(true)); // -1
 
 
 // 7.lastIndexOf：返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，如果不存在则返回 -1。
@@ -130,7 +136,7 @@
 // (4). 如果已经存在的值被改变，则传递给 callback 的值是遍历到他们那一刻的值。
 
 
-// 3.测试数组中是不是至少有1个元素通过了被提供的函数测试。它返回的是一个Boolean类型的值。
+// 3.some：测试数组中是不是至少有1个元素通过了被提供的函数测试。它返回的是一个Boolean类型的值。
 // MDN：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 // 用法：arr.some(callback(element, index, array), thisArg)； index(可选) array(可选) thisArg(可选)
 // function isBiggerThan10(element, index, array) {
@@ -248,7 +254,7 @@
 // 用法：arr.entries()
 // const array1 = ['a', 'b', 'c'];
 // const iterator1 = array1.entries();
-// console.log(iterator1);
+// console.log(iterator1.next().value);
 // // expected output: Array [0, "a"]
 // console.log(iterator1.next().value);
 // // expected output: Array [1, "b"]
