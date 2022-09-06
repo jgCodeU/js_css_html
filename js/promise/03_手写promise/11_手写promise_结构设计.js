@@ -1,33 +1,37 @@
-const PROMISE_STATUS_PENDING = 'pending'
-const PROMISE_STATUS_FULFILLED = 'fulfilled'
-const PROMISE_STATUS_REJECTED = 'rejected'
-
+let PROMISE_STATUS_PENDING = "pennding";
+let PROMISE_STATUS_FULFILLED = "fulfilled";
+let PROMISE_STATUS_REJECTED = "rejected";
 class MyPromise {
-    constructor(exeFn) {
-        this.status = PROMISE_STATUS_PENDING
-
-        const MyResolve = () => {
-            if(this.status === PROMISE_STATUS_PENDING){
-                this.status = PROMISE_STATUS_FULFILLED
-                console.log('执行MyResolve')
-            }
-        }
-        const MyReject = () => {
-            if(this.status === PROMISE_STATUS_PENDING){
-                this.status === PROMISE_STATUS_REJECTED
-                console.log('执行MyReject')
-            }
-        }
-        exeFn(MyResolve, MyReject)
-    }
+  constructor(exeFn) {
+    // new MyPromise()执行的操作：
+    // 1.初始化promise状态
+    // 2.定义MyResolve和MyReject方法
+    // 3.执行传入的函数
+    this.status = PROMISE_STATUS_PENDING;
+    const MyResolve = () => {
+      // 控制promise的状态 
+      if ((this.status = PROMISE_STATUS_PENDING)) {
+        this.status = PROMISE_STATUS_FULFILLED;
+      }
+    };
+    const MyReject = () => {
+      // 控制promise的状态 
+      if ((this.status = PROMISE_STATUS_PENDING)) {
+        this.status = PROMISE_STATUS_REJECTED;
+      }
+    };
+    exeFn(MyResolve, MyReject);
+  }
 }
 
+const promise = new MyPromise((resolve, reject) => {
+    console.log('创建promise对象')
+    resolve()
+}) 
 
-const promise = new MyPromise((MyResolve, MyReject) => {
-    console.log('pending状态')
-    MyResolve()
-    MyReject()
-})
-
-//本节目标：
-//在构建promise对象的时候，立即执行传入的函数
+// 总结：
+// new MyPromise()执行的操作：
+// 1.初始化promise状态
+// 2.定义MyResolve和MyReject方法
+// （1）MyResolve和MyReject方法的作用：控制promise的状态
+// 3.执行传入的函数

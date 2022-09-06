@@ -7,17 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 注意1. -->
-    <!-- 当直接使用script标签引入一个js文件时，该js文件不会被当成一个模块，此时不允许该js文件中使用import -->
-    <!-- 所以，必须在script标签中写上type属性 -->
-    <!-- 注意2. -->
-    <!-- 使用模块化代码时，需要使用liveServer来打开页面。 -->
-    <!-- 当直接打开本地html文件时，浏览器链接的协议是file，无法正确加载模块 -->
-    <!-- 当使用live Server打开文件时，浏览器链接的协议不是file，而是http\https等，此时才能正确加载模块 -->
-    
     <!-- utils文件夹中，index.js作为其他所有工具变量的统一出口 -->
     <script src="./main.js" type="module"></script>
-    
-
 </body>
 </html>

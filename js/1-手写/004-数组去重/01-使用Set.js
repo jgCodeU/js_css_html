@@ -1,7 +1,16 @@
 // 去除数组中重复的元素
-function foo(arr) {
-    return [ ...new Set(arr)]
-}
+// function foo(arr) {
+//     return [ ...new Set(arr)]
+// }
 
-let arr1 = [1,1,2,3,3,4,2,4]
-console.log(foo(arr1))
+// let arr1 = [1,1,2,3,3,4,2,4]
+// console.log(foo(arr1))
+
+
+function foo(arr) {
+    return [... new Set(arr)]
+}
+let arr = [1, 2, 2, 3, 4, 4]
+console.log(foo(arr))
+
+

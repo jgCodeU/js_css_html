@@ -9,9 +9,10 @@ const money = '¥237847364738984'
 module.exports = {
     name,
     age,
-    foo
+    foo,
+    money
 }
 console.log('modulemodule', module)
-require("./part.js")
-require("./part.js")
+// require("./part.js")
+// require("./part.js")
 
