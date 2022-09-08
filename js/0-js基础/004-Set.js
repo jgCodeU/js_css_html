@@ -6,13 +6,24 @@
 // 其中，param是一个具有iterable接口的数据解构，用来初始化Set数据结构
 // 例：
 // 创建一个Set实例：
-// const set1 = new Set()
+const set1 = new Set()
 // 向Set实例中添加元素
-// set1.add(1)
-// set1.add(2)
-// set1.add(2)
-// set1.add({name: 'zhangsan', age: 20})
-// console.log('set1', set1) // { 1, 2, { name: 'zhangsan', age: 20 } }
+set1.add(1)
+set1.add(2)
+set1.add(2)
+set1.add({name: 'zhangsan', age: 20})
+set1.add({name: 'zhangsan', age: 20})
+const numObj = { num1: 1, num2: 2, num3: 3 }
+set1.add(numObj)
+set1.add(numObj)
+console.log(set1) 
+// {
+//     1,
+//     2,
+//     { name: 'zhangsan', age: 20 },
+//     { name: 'zhangsan', age: 20 },
+//     { num1: 1, num2: 2, num3: 3 }
+// }
 
 // Set 常用方法
 // Set.prototype.size：返回 Set 对象中的值的个数
@@ -24,33 +35,33 @@
 // Set.prototype.values()：返回一个新的迭代器对象，该对象包含 Set 对象中的按插入顺序排列的所有元素的值。
 // Set.prototype.clear()：移除Set对象内的所有元素。
 // 例：
-const set2 = new Set()
-set1.add(1)
-set1.add(2)
-set1.add('123')
-set1.add(null)
-set1.add(void 0)
-set1.add(NaN)
-set1.add(NaN)
-console.log(set1) // { 1, 2, '123', null, undefined, NaN }
-console.log(set1.size) // 6
-console.log(set1.delete(NaN)) // true
-console.log(set1.delete(3)) // false
-console.log(set1) // { 1, 2, '123', null, undefined }
-console.log(set1.entries()) 
-// {
-//     [ 1, 1 ],
-//     [ 2, 2 ],
-//     [ '123', '123' ],
-//     [ null, null ],
-//     [ undefined, undefined ]
-// }
-console.log(set1.has(void 0)) // true
-console.log(set1.has(3)) // false
-console.log(set1.keys()) // { 1, 2, '123', null, undefined }
-console.log(set1.values()) // { 1, 2, '123', null, undefined }
-console.log(set1.clear()) // undefined
-console.log(set1) // {}
+// const set2 = new Set()
+// set1.add(1)
+// set1.add(2)
+// set1.add('123')
+// set1.add(null)
+// set1.add(void 0)
+// set1.add(NaN)
+// set1.add(NaN)
+// console.log(set1) // { 1, 2, '123', null, undefined, NaN }
+// console.log(set1.size) // 6
+// console.log(set1.delete(NaN)) // true
+// console.log(set1.delete(3)) // false
+// console.log(set1) // { 1, 2, '123', null, undefined }
+// console.log(set1.entries()) 
+// // {
+// //     [ 1, 1 ],
+// //     [ 2, 2 ],
+// //     [ '123', '123' ],
+// //     [ null, null ],
+// //     [ undefined, undefined ]
+// // }
+// console.log(set1.has(void 0)) // true
+// console.log(set1.has(3)) // false
+// console.log(set1.keys()) // { 1, 2, '123', null, undefined }
+// console.log(set1.values()) // { 1, 2, '123', null, undefined }
+// console.log(set1.clear()) // undefined
+// console.log(set1) // {}
 
 
 
