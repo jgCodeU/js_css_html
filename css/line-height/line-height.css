@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: pink;
+    font-size: 80px;
+}
+
+/* 设置 font-size */
+.boxPro {
+    font-size: 30px;
+    line-height: 1em;
+    /* line-height: 1.2; */
+    /* line-height: 150%; */
+    /* line-height: 100px; */
+    /* line-height: inherit; */
+    background-color: gray;
+}
+
+/* 不设置 font-size */
+.box {
+    width: 300px;
+    line-height: 1em;
+    /* line-height: 1.2; */
+    /* line-height: 150%; */
+    /* line-height: 100px; */
+    /* line-height: inherit; */
+    background-color: skyblue;
+}
+
+/* 总结： */
+/* 当不使用 px 作为 line-height 的单位时，当前元素的 line-height 值均由当前元素的 font-size 值计算得出 */
+
+
+
