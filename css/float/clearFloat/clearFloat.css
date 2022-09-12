@@ -9,6 +9,10 @@ p {
   background-color: rgb(230, 83, 174);
 }
 
+.parentFloatDiv {
+  overflow: hidden;
+  background-color: blue;
+}
 
 .floatDiv {
   width: 300px;
