@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: pink;
+    font-size: 80px;
+}
+
+.boxPro {
+    width: 300px;
+    font-size: 30px;
+    background-color: gray;
+
+    overflow: hidden;
+    /* 溢出隐藏 */
+    text-overflow: ellipsis;
+    /* 溢出用省略号显示 */
+    white-space: nowrap;
+    /* 不换行 */
+}
+
+p {
+    width: 400px;
+    border-radius: 1px solid red;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+

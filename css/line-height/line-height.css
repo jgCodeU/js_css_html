@@ -22,6 +22,15 @@
 /* 不设置 font-size */
 .box {
     width: 300px;
+    /* line-height: 1em; */
+    line-height: 1.2;
+    /* line-height: 150%; */
+    /* line-height: 100px; */
+    /* line-height: inherit; */
+    background-color: skyblue;
+}
+
+.box1 {
     line-height: 1em;
     /* line-height: 1.2; */
     /* line-height: 150%; */
@@ -30,8 +39,19 @@
     background-color: skyblue;
 }
 
+.box1-1 {
+    width: 60%;
+    font-size: 20px;
+    background-color: red;
+}
+
 /* 总结： */
 /* 当不使用 px 作为 line-height 的单位时，当前元素的 line-height 值均由当前元素的 font-size 值计算得出 */
+/* 当父盒子 line-height 为纯数字时，子盒子会继承这个纯数字的 line-height */
+/* 当父盒子 line-height 为百分比时，子盒子会继承父盒子计算后的 line-height 值 */
+
+
+
 
 
 
