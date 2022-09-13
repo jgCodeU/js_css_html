@@ -5,23 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>floatEffect</title>
+    <title>clearFloatPeers</title>
     <style>
-        /* 解决浮动盒子的父盒子与其同级盒子之间的影响：BFC  */
-        /* @import url(./clearFloat-BFC.css); */
-        
-        /* 解决浮动盒子的父盒子与其同级盒子之间的影响：clear  */
-        @import url(./clearFloat-clear.css);
+        @import url(./clearFloatPeers.css);
     </style>
 </head>
-
+<!-- 消除浮动盒子与其同级的盒子之间的影响 -->
 <body>
     <h1>Simple float example</h1>
     <div class="parentFloatDiv clearfix">
         <div class="floatDiv"></div>
+        <p class="floatDivNext"></p>
+        <p> 
+            与floatDiv同级
+        </p>
     </div>
     <p> 
         与parentFloatDiv同级、与parentFloatDiv同级、与parentFloatDiv同级、与parentFloatDiv同级、与parentFloatDiv同级、与parentFloatDiv同级、与parentFloatDiv同级、与parentFloatDiv同级
     </p>
+    
 </body>
 </html>

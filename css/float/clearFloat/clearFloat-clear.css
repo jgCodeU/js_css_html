@@ -1,0 +1,34 @@
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  border: pink solid 10px;
+}
+
+p {
+  margin: 0;
+  background-color: rgb(230, 83, 174);
+}
+
+
+.parentFloatDiv {
+  background-color: blue;
+}
+
+.floatDiv {
+  width: 300px;
+  height: 30px;
+  float: left;
+  background-color: skyblue;
+  /* opacity: .6; */
+}
+
+/* 解决浮动盒子的父盒子与其同级盒子之间的影响：clear */
+.clearfix::after {
+  display: block;
+  overflow: hidden;
+  content: '伪元素的内容哦';
+  clear: both;
+  height: 0;
+  background: slateblue;
+}
