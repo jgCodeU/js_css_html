@@ -53,6 +53,40 @@
 // console.log(map2.clear()) // undefined
 // console.log(map2) // {}
 
+
+// NaN 和 undefined 作为 Map 对象的键
+// const myMap = new Map()
+// myMap.set(NaN, 'not a number')
+// console.log(myMap.get(NaN)) // "not a number"
+// myMap.set(undefined, 'key is undefined')
+// console.log(myMap.get(undefined)) // key is undefined
+
+// 迭代 Map 对象
+// const mapObj = new Map()
+// mapObj.set(NaN, 'not a number')
+// mapObj.set(undefined, 'key is undefined')
+// mapObj.set({name: 'zhangsan'}, {age: 20})
+// // 使用 for-of 迭代 Map 对象
+// for(item of mapObj) {
+//     console.log(item)
+// }
+// // [ NaN, 'not a number' ]
+// // [ undefined, 'key is undefined' ]
+// // [ { name: 'zhangsan' }, { age: 20 } ]
+
+// Map 与数组的关系
+const kvArray = [["key1", "value1"], ["key2", "value2"]];
+// 使用常规的 Map 构造函数可以将一个二维键值对数组转换成一个 Map 对象
+const myMap = new Map(kvArray);
+console.log(myMap.get("key1")); //  "value1"
+// 使用 Array.from 函数可以将一个 Map 对象转换成一个二维键值对数组
+console.log(Array.from(myMap)); // 输出和 kvArray 相同的数组:[ [ 'key1', 'value1' ], [ 'key2', 'value2' ] ]
+// 更简洁的方法来做如上同样的事情，使用展开运算符
+console.log([...myMap]); // [ [ 'key1', 'value1' ], [ 'key2', 'value2' ] ]
+// 或者在键或者值的迭代器上使用 Array.from，进而得到只含有键或者值的数组
+console.log(Array.from(myMap.keys())); // 输出 ["key1", "key2"]
+
+
 // ========================================================================
 
 // WeakMap
@@ -73,15 +107,15 @@
 // WeakMap.prototype.has(key)：返回一个布尔值，断言一个值是否已经与 WeakMap 对象中的 key 关联。
 // WeakMap.prototype.delete(key)：删除 WeakMap 中与 key 相关联的值。删除之后， WeakMap.prototype.has(key) 将会返回 false。
 // 创建 WeakMap 实例
-const weakMapObj = new WeakMap()
-const objKey1 = { name: 'num' }
-weakMapObj.set(objKey1, { num1: 1, num2: 2, num3: 3 })
-function fun() {}
-weakMapObj.set(fun, 'emptyFun')
-console.log(weakMapObj.get(fun)) // 'emptyFun'
-console.log(weakMapObj.has(objKey1)) // true
-console.log(weakMapObj.delete(fun)) //  true
-console.log(weakMapObj) 
+// const weakMapObj = new WeakMap()
+// const objKey1 = { name: 'num' }
+// weakMapObj.set(objKey1, { num1: 1, num2: 2, num3: 3 })
+// function fun() {}
+// weakMapObj.set(fun, 'emptyFun')
+// console.log(weakMapObj.get(fun)) // 'emptyFun'
+// console.log(weakMapObj.has(objKey1)) // true
+// console.log(weakMapObj.delete(fun)) //  true
+// console.log(weakMapObj) 
 
 
 

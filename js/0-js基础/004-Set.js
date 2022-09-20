@@ -5,18 +5,18 @@
 // const setData = new Set(param)
 // 其中，param是一个具有iterable接口的数据解构，用来初始化Set数据结构
 // 例：
-// 创建一个Set实例：
-const set1 = new Set()
-// 向Set实例中添加元素
-set1.add(1)
-set1.add(2)
-set1.add(2)
-set1.add({name: 'zhangsan', age: 20})
-set1.add({name: 'zhangsan', age: 20})
-const numObj = { num1: 1, num2: 2, num3: 3 }
-set1.add(numObj)
-set1.add(numObj)
-console.log(set1) 
+// // 创建一个Set实例：
+// const set1 = new Set()
+// // 向Set实例中添加元素
+// set1.add(1)
+// set1.add(2)
+// set1.add(2)
+// set1.add({name: 'zhangsan', age: 20})
+// set1.add({name: 'zhangsan', age: 20})
+// const numObj = { num1: 1, num2: 2, num3: 3 }
+// set1.add(numObj)
+// set1.add(numObj)
+// console.log(set1) 
 // {
 //     1,
 //     2,
@@ -62,6 +62,30 @@ console.log(set1)
 // console.log(set1.values()) // { 1, 2, '123', null, undefined }
 // console.log(set1.clear()) // undefined
 // console.log(set1) // {}
+
+
+
+// 迭代 Set 对象
+// const setObj = new Set()
+// setObj.add(1)
+// setObj.add('a')
+// setObj.add({age: 20})
+// for(let item of setObj) {
+//     console.log(item)
+// }
+
+// 数组去重
+// let arr = [1,2,2,2,3]
+// let setArr = new Set(arr)
+// let arr1 = Array.from(setArr)
+// console.log(arr) // [ 1, 2, 2, 2, 3 ]
+// console.log(setArr) // Set(3) { 1, 2, 3 }
+// console.log(arr1) // [ 1, 2, 3 ]
+// // 或者：
+// let arr3 = [...new Set(arr)]
+// console.log(arr3)
+
+
 
 
 
