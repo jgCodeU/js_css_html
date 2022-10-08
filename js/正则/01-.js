@@ -41,7 +41,7 @@
 // console.log(str.length)
 // console.log(str.match(regex)[0])
 
-// 匹配手机号
+// 匹配手机号 11位
 // const regex = /^1[34578]\d{9}$/
 // const str = '13300000001'
 // console.log(str.length)
