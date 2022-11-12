@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断质数</title>
+</head>
+
+<body>
+    <script>
+        // 判断质数
+        // 特点：不能被 2——Math.sqrt(num) 之间的数整除
+        function isPrime(num) {
+            let temp = parseInt(Math.sqrt(num))
+            for (let i = 2; i <= temp; i++) {
+                if (num % i === 0) {
+                    return i
+                }
+            }
+            return true
+        }
+
+        // console.log(isPrime(1))
+        // console.log(isPrime(2))
+        console.log(isPrime(3))
+        console.log(isPrime(11))
+        console.log(isPrime(123))
+        console.log(isPrime(41))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈希函数</title>
+</head>
+
+<body>
+    <script>
+        // 基于数组实现
+        // 哈希化：将大数字转化成数组长度范围内下标的过程。
+        // 哈希函数：将字符串转换大数，将大数进行哈希化的代码实现。
+        // 哈希表：最终将数据插入到的这个数组，对整个结构的封装，叫做哈希表。
+        // 冲突：两个相同的字符串经过哈希函数处理后，对应到数组的相同位置。
+        // 解决冲突：（1）链地址法；（2）开放地址法。
+
+        // 设计哈希函数：（1）将字符串转换为大数；（2）将大数进行哈希化。
+        function hashFunc(str, size) {
+            // 1. 定义hashCode
+            let hashCode = 0
+
+            // 霍纳算法，计算hashCode的值
+            for(let i = 0 ; i < str.leength ; i++) {
+                hashCode = 37 * hashCode + str.charCodeAt(i)
+            }
+
+            // 3. 取余操作
+            let index = hashCode % size
+
+            return index
+        }   
+
+
+    </script>
+
+</body>
+
+</html>

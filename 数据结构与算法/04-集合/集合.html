@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合</title>
+</head>
+
+<body>
+    <script>
+        // 集合有哪些常见的操作方法呢？
+        // add(value)：向集合添加一个新的项
+        // remove (value)：从集合移除一个值
+        // has(value)：如果值在集合中，返回true，否则返回false。
+        // clear()：移除集合中的所有项。
+        // size：返回集合所包含元素的数量。与数组的length属性类似。
+        // values： 获取集合中所有的值
+
+        // 并集、交集、差集、子集
+        // 还有一些集合其他相关的操作，暂时用不太多，这里暂不封装
+
+
+        // 封装集合类
+        function mySet() {
+            // 属性
+            this.items = {}
+
+            // 方法
+            mySet.prototype.add = function (value) {
+                // 判断当前集合中是否已经包含该元素
+                if (this.has(value)) {
+                    return false
+                }
+                // 将元素添加到集合中
+                this.items[value] = value
+                return true
+            }
+
+            // has 方法
+            mySet.prototype.has = function (value) {
+                return this.items.hasOwnProperty(value)
+            }
+
+            // remove 方法
+            mySet.prototype.remove = function (value) {
+                // 1. 判断集合中是否包含
+                if (!this.has(value)) {
+                    return false
+                }
+                // 2.移除元素
+                delete this.items[value]
+                return true
+            }
+
+            // clear 方法
+            mySet.prototype.clear = function () {
+                this.items = {}
+            }
+
+            // size 方法
+            mySet.prototype.size = function () {
+                return Object.keys(this.items).length
+            }
+
+            // 获取集合中所有的值
+            mySet.prototype.values = function () {
+                return keys = Object.keys(this.items)
+            }
+
+            // 集合间操作
+            // 并集
+            mySet.prototype.union = function(otherSet) {
+                // 创建新的集合
+                let unionSet = new mySet()
+                // 将当前集合中所有元素添加到新集合中
+                let values = this.values()
+                for(let i = 0; i < values.length; i++){
+                    unionSet.add(values[i])
+                }
+                // 取出otherSet中的元素，加入unionSet
+                values = otherSet.values
+                for(let i = 0; i < values.length; i++) {
+                    if(!this.items.has(values[i])) {
+                        unionSet.add(values[i])
+                    }
+                }
+                return unionSet
+            }
+            // 交集
+            mySet.prototype.intersection = function(otherSet) {
+                let intersectionSet = new mySet()
+                let values = this.values()
+                for(let i = 0 ; i < values.length ; i++ ) {
+                    otherSet.has(values[i]) && intersectionSet.add(values[i])
+                }
+                return intersectionSet
+            }
+            // 差集
+            mySet.prototype.difference = function(otherSet) {
+                let differenceSet = new mySet()
+                let values = this.values()
+                for(let i = 0 ; i < values.length ; i++ ) {
+                   (!otherSet.has(values[i])) && differenceSet.add(values[i])
+                }
+                return differenceSet
+            }
+            // 子集
+            mySet.prototype.subSet = function(otherSet) {
+                let values = this.values()
+                for( let i = 0 ; i < values.length ; i++ ) {
+                    if(!otherSet.has(values[i])) {
+                        return false
+                    }
+                }
+                return true
+            }
+
+
+        }
+
+
+        // 测试和使用集合类
+        var set = new mySet()
+
+        // 添加元素
+        set.add(1)
+        set.add(123)
+        console.log(set.add(1))
+        console.log(set.values()) // 1
+
+        // 判断是否包含元素
+        console.log(set.has(1)) // true
+
+        // // 删除元素
+        // set.remove(100)
+        // console.log(set.values()) // 1, 200
+
+        // // 获取集合的大小
+        // console.log(set.size()) // 2
+        // set.clear()
+        // console.log(set.size()) // 0
+    </script>
+
+</body>
+
+</html>

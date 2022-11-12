@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈希表</title>
+</head>
+
+<body>
+    <script>
+        // 封装哈希表类，使用链地址法
+        function HashTable() {
+            // 属性
+            this.storage = [] // 存放元素
+            this.count = 0 // 已经存放的元素个数
+            // 当插入因子大于 0.75 时，再插入元素性能会变低，需要对数组进行扩容。
+            // 当插入因子小于 0.25 时，需要减小数组的大小。
+            this.limit = 7 // 数组长度
+
+            // 方法：
+            // 哈希函数
+            HashTable.prototype.hashFunc = function (str, size) {
+                // 1. 定义hashCode
+                let hashCode = 0
+
+                // 霍纳算法，计算hashCode的值
+                for (let i = 0; i < str.length; i++) {
+                    hashCode = 37 * hashCode + str.charCodeAt(i)
+                }
+
+                // 3. 取余操作
+                let index = hashCode % size
+
+                return index
+            }
+
+            // 插入/修改 数据
+            HashTable.prototype.put = function (key, value) {
+                // 1. 根据 key 获取索引值（数据插入的位置）
+                let index = this.hashFunc(key, this.limit)
+
+                // 2. 根据索引值取出存放数据的 bucket
+                // （1）若 bucket 不存在，创建并放在该位置
+                let bucket = this.storage[index]
+                if (this.storage == null) {
+                    bucket = []
+                    this.storage[index] = bucket
+                }
+
+                // 3. 判断是新增还是修改操作
+                for (let i = 0; i < bucket.length; i++) {
+                    let tuple = bucket[i]
+                    if (tuple[0] == key) {
+                        // 修改操作
+                        tuple[1] = value
+                        return
+                    }
+                }
+                // 新增操作
+                bucket.push([key, value])
+                this.count++
+            }
+
+            // 获取元素
+            Hash.prototype.get = function (key) {
+                // 1. 根据 key 获取 index
+                let index = this.hashFunc(key, this.limit)
+
+                // 2. 遍历 bucket 来匹配 key
+                let bucket = this.storage[index]
+                if (bucket != null) {
+                    for (let i = 0; i < bucket.length; i++) {
+                        if (bucket[i][0] == key) {
+                            return bucket[i][1]
+                        }
+                    }
+                }
+                return null
+            }
+
+            // 删除元素
+            Hash.prototype.remove = function (key) {
+                // 1. 根据 key 获取 index
+                let index = this.hashFunc(key, this.limit)
+
+                // 2. 查找并删除该元素
+                let bucket = this.storage[index]
+                if (bucket != null) {
+                    for (let i = 0; i < bucket.length; i++) {
+                        if (bucket[i][0] == key) {
+                            let value = bucket[i][1]
+                            bucket.splice(i, 1)
+                            this.count--
+                            return value
+                        }
+                    }
+                }
+                return null
+            }
+
+            // 判断哈希表是否为空
+            Hash.prototype.isEmpty = function() {
+                return this.count === 0
+            }
+
+            // 获取哈希表中元素个数
+            Hash.prototype.size = function() {
+                return this.count
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

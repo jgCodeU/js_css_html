@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>队列</title>
+</head>
+
+<body>
+    <!-- 概念 -->
+    <!-- 特点：数据先进先出 -->
+    <script>
+        // 常用操作：
+        // enqueue：队尾添加元素。
+        // dequeue：队头移除元素并返回被移除的元素。
+        // front：返回队头元素，不修改队列。
+        // isEmpty：判断队列是否为空，返回 true 或者 false。
+        // size：返回队列中元素个数。
+        // toString()：将队列中元素以字符形式返回。
+
+        // 自定义队列
+        // 数组实现
+        function Queue() {
+            this.items = []
+
+            // 队列操作的方法
+            // 队尾添加元素
+            Queue.prototype.enqueue = function (element) {
+                this.items.push(element)
+            }
+
+            // 队头移除元素并返回被移除的元素
+            Queue.prototype.dequeue = function () {
+                return this.items.shift()
+            }
+
+            // 返回队头元素，不修改队列
+            Queue.prototype.front = function () {
+                return this.items[0]
+            }
+
+            // 判断队列是否为空，返回 true 或者 false
+            Queue.prototype.isEmpty = function () {
+                return this.items.length == 0
+            }
+
+            // 返回队列中元素个数
+            Queue.prototype.size = function () {
+                return this.items.length
+            }
+
+            // toString方法
+            Queue.prototype.toString = function () {
+                return this.items.toString()
+            }
+        }
+
+        // 创建队列对象
+        var queue = new Queue()
+
+        // 在队列中添加元素
+        queue.enqueue("abc")
+        queue.enqueue("cba")
+        queue.enqueue("nba")
+
+        // 查看一下队列前端元素
+        console.log(queue.front())
+
+        // 查看队列是否为空和元素个数
+        console.log(queue.isEmpty())
+        console.log(queue.size())
+
+        // 从队列中删除元素
+        console.log(queue.dequeue())
+        console.log(queue.dequeue())
+        console.log(queue.dequeue())
+
+    </script>
+
+</body>
+
+</html>

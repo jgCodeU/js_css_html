@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>itjc8</title>
+</head>
+
+<body>
+    <script>
+        // 常用操作：
+        // push(element)：添加一个新元素到栈顶。
+        // pop()：移除栈顶元素，同时返回被移除的值。
+        // peek()：查看栈顶元素，不修改栈中元素。
+        // isEmpty()：判断栈是否为空，返回 true 或者 false。
+        // size()：返回栈中元素个数。
+        // toString()：将栈中元素以字符形式返回。
+
+        // 实现栈类：
+        // 思想：通过构造函数新建一个对象，该对象的原型包含操作栈结构的各种方法。
+        // 栈类
+        function Stack() {
+            // 栈中的属性
+            this.items = []
+
+            // 栈相关的方法
+            // 压栈操作
+            Stack.prototype.push = function (element) {
+                this.items.push(element)
+            }
+
+            // 出栈操作
+            Stack.prototype.pop = function () {
+                return this.items.pop()
+            }
+
+            // peek操作
+            Stack.prototype.peek = function () {
+                return this.items[items.length - 1]
+            }
+
+            // 判断栈中的元素是否为空
+            Stack.prototype.isEmpty = function () {
+                return this.items.length == 0
+            }
+
+            // 获取栈中元素的个数
+            Stack.prototype.size = function () {
+                return this.items.length
+            }
+
+            // toString方法
+            Stack.prototype.toString = function () {
+                return this.items.toString()
+            }
+        }
+
+
+        var stack = new Stack()
+        stack.push(10)
+        stack.push(20)
+        stack.push(30)
+        console.log('stack', stack)
+        console.log(stack.toString())
+
+
+
+    // 封装十进制转二进制的函数
+    function dec2bin(decNumer) {
+        // 定义变量
+        var stack = new Stack()
+        var remainder;
+
+        // 循环除法
+        while (decNumer > 0) {
+            stack.push(decNumer % 2)
+            decNumer = Math.floor(decNumer / 2)
+        }
+
+        // 将数据取出
+        var binayriStrng = ""
+        while (!stack.isEmpty()) {
+            binayriStrng += stack.pop()
+        }
+        return binayriStrng
+    }
+
+    // 测试函数
+    console.log('10->', dec2bin(10))
+    console.log('233->', dec2bin(233))
+    console.log('1000->', dec2bin(1000))
+    </script>
+</body>
+
+</html>
