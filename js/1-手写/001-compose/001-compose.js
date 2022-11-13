@@ -66,6 +66,9 @@ function compose(...arg) {
     return anony
 }
 
+
+
+
 function fun1(val) {
     return val + 1
 }
