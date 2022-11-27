@@ -29,15 +29,16 @@ Function.prototype.myBind = function (thisObj, ...args) {
   function fun() {
     this.name = "funfunfun";
   }
-  let person = { age: 21 };
-  let newFun = fun.myBind(person);
-  console.log("newFun", new newFun());
-  console.log("person", person);
+  // let person = { age: 21 };
+  // let newFun = fun.myBind(person);
+  // console.log("newFun", new newFun());
+  // console.log("person", person);
   
-  // let person1 = { age: 22 };
-  // let newFun1 = fun.bind(person1);
+  let person1 = { age: 22 };
+  let newFun1 = fun.bind(person1);
   // console.log('newFun-1', new newFun1)
-  // console.log('person-1', person1)
+  newFun1()
+  console.log('person-1', person1)
 
 
 // 内置bind函数测试

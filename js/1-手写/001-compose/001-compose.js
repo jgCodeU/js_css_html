@@ -50,7 +50,7 @@
 // const fn = compose(fn1, fn2, fn3)
 // console.log('fn(1)', fn(1)) 
 
-
+// 一个输入值，多个函数依次对其处理，将多个函数进行合并
 function compose(...arg) {
     const anony = function (val) {
         if(arg.length === 0) return val
